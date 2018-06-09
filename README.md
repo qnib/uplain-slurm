@@ -1,2 +1,2 @@
-# plain-slurm
+# uplain-slurm
 Image holding slurm
