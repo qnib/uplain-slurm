@@ -1,0 +1,8 @@
+[template]
+src = "slurm.conf.tmpl"
+dest = "/etc/slurm-llnl/slurm.conf"
+keys = [
+    "/slurmctld",
+    "/slurmd",
+]
+reload_cmd = "scontrol reconfigure"
