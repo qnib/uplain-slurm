@@ -50,9 +50,7 @@ COPY entry/90-entrypoint.sh \
  /opt/entry/
 COPY etc/confd/templates/slurm.conf.tmpl /etc/confd/templates/slurm.conf.tmpl
 COPY etc/confd/conf.d/slurm.toml /etc/confd/conf.d/slurm.toml
-COPY opt/qnib/slurm/bin/reload.sh \
-  opt/qnib/slurm/bin/start.sh \
-  /opt/qnib/slurm/bin/
+COPY opt/qnib/slurm/bin/start.sh /opt/qnib/slurm/bin/
 CMD ["/opt/qnib/slurm/bin/start.sh"]
 ENV SLURM_IS_CTLD=false
 
