@@ -38,15 +38,9 @@ JobCredentialPublicCertificate=/usr/local/slurm/public.cert
 #
 # Node Configurations
 #
-{{range gets "/slurmd/"}}
-ControlMachine={{.Key}}
-ControlAddr={{.Value}}
-{{ end }}
-
 NodeName=DEFAULT CPUs=1 RealMemory=200
 NodeName=DEFAULT State=UNKNOWN
-{{range gets "/slurmd/*"}}
-NodeName={{base .Key}} NodeAddr={{.Value}}
+{{range gets "/slurmd/*"}}NodeName={{base .Key}} NodeAddr={{.Value}}
 {{ end }}
 #
 # Partition Configurations

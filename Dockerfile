@@ -19,7 +19,7 @@ RUN apt-get install -y libevent-dev flex \
 
 ## SLURM
 ARG SLURM_VER=17.11.7
-RUN apt-get install -y libgtk2.0-dev libmunge-dev munge vim \
+RUN apt-get install -y libgtk2.0-dev libmunge-dev munge vim iputils-ping \
  && echo
 # && useradd -s /bin/false slurm \
 # && mkdir -p /usr/local/src/slurm \
@@ -44,7 +44,6 @@ RUN mkdir -p /etc/munge/ \
  /var/log/munge \
  && chmod 711 /var/lib/munge/ \
  && echo -n "foo" | sha1sum | cut -d' ' -f1 >/etc/munge/munge.key
-RUN apt-get install -y vim
 COPY entry/90-entrypoint.sh \
  entry/91-slurmd.sh \
  /opt/entry/
